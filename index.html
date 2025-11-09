@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agrawal Tiffin Services</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+
+    body { background:#F5E6FF; color:#4A2E5A; font-family:'Poppins', sans-serif; }
+
+    header {
+      position:fixed; top:0; left:0; width:100%; padding:20px 60px;
+      display:flex; justify-content:space-between; align-items:center;
+      background:#E9D7FF;
+      background-size: 80px;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav a {
+      text-decoration:none; margin:0 18px; color:#4A2E5A;
+      font-weight:600; font-size:1.05rem;
+      transition:.3s;
+    }
+    nav a:hover { color:#BF8C00; }
+
+    .hero {
+      height:100vh; display:flex; flex-direction:column;
+      justify-content:center; align-items:center;
+      background:linear-gradient(rgba(230, 210, 255, 0.6), rgba(245, 225, 255, 0.8)), url('https://images.unsplash.com/photo-1601050690597-1f43e8b00659');
+      background-size:cover; background-position:center;
+      color:#4A2E5A;
+      animation: fadeIn 1.8s ease-out;
+      text-align:center;
+    }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+
+    .hero h1 { font-size:4rem; font-weight:800; letter-spacing:1px; }
+    .hero p { font-size:1.4rem; margin-top:12px; }
+
+    section { padding:100px 60px; }
+    .title {
+      font-size:2.8rem; text-align:center;
+      margin-bottom:40px; color:#4A2E5A; font-weight:700;
+      position:relative;
+    }
+    .title::after {
+      content:"";
+      width:120px; height:6px;
+      background:#C97A40;
+      border-radius:6px;
+      position:absolute;
+      bottom:-15px; left:50%; transform:translateX(-50%);
+    }
+
+    .menu-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:40px;
+      padding:0 40px;
+    }
+
+    .menu-item { border:3px solid #B88ED3; 
+      padding:20px; border-radius:22px;
+      box-shadow:0 6px 20px rgba(50, 120, 60, 0.25);
+      opacity:0; transform:translateY(40px); transition:all .6s ease;
+      background:#F0E0FF; 
+      text-align:center;
+    }
+    .menu-item:hover {
+      transform:translateY(-8px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.22);
+    }
+
+    footer {
+      background:#E7D3FF;
+      padding:35px; text-align:center;
+      color:#4A2E5A; font-size:1rem;
+      margin-top:60px;
+      background-size:80px; background-repeat:repeat-x; background-position:top;
+    }
+
+    .contact-box { border:3px solid #B88ED3;  opacity:0; transform:translateY(40px); transition:all .6s ease; 
+      background:#F1E3FF; padding:35px; border-radius:20px;
+      max-width:450px; margin:auto; text-align:center;
+      box-shadow:0 5px 18px rgba(0,0,0,0.15);
+    }
+
+    .whatsapp-btn {
+      padding:14px 28px; background:#25d366; color:white;
+      font-size:1.1rem; border-radius:30px; text-decoration:none;
+      display:inline-block; margin-top:15px;
+    }
+
+    .float-wa {
+      position:fixed; bottom:25px; right:25px;
+      background:#25d366; padding:15px 18px;
+      border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      z-index:200;
+    }
+    .float-wa img { width:35px; height:35px; filter:invert(1); }
+  </style>
+
+<script>
+  document.addEventListener('scroll', () => {
+    document.querySelectorAll('.menu-item, .contact-box').forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }
+    });
+  });
+</script>
+</head>
+<body>
+  <header style="position:relative;">
+    <h2 style="font-family: 'Georgia', serif; font-size:2.4rem; letter-spacing:1px;"><strong>Agrawal Tiffin Services</strong></h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Agrawal Tiffin Services</h1>
+    <p>Ghar Ka Swad Har Din Ke Sath<br><span style='font-size:1.2rem; font-weight:600; color:#C97A40;'>Because Marwadis Are Cooking 👩‍🍳✨</span></p>
+  </section>
+
+<section id="menu">
+    <h2 class="title">Our Menu (Pure Veg)</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <p><strong>Ideal Daily Meal</strong><br>5 Chapatis • Sabzi • Daal • Rice<br>(Salad & Pickle Alternate Days)</p>
+      </div>
+
+      <div class="menu-item">
+        <p><strong>Sunday Marwadi Special Options</strong><br>Gatte • Kadhi • Dal Baati • Churma • Various Halwas • Bajra Roti • Marwadi Sabzi • Special Sweet Dish</p>
+      </div>
+
+      <div class="menu-item">
+        <p><strong>Sunday Evening Dinner</strong><br>Masala Khichdi • Gujarati Kadhi • Pulav • Rotating Varieties</p>
+      </div>
+    </div>
+
+    <p style="text-align:center; font-size:1.1rem; margin-bottom:20px; color:#4A2E5A;">
+      We provide a <strong>Marwadi touch</strong> in food daily. 
+      On Sundays and festivals, you get <strong>special dishes</strong> and <strong>sweet items</strong> too. 
+      You can even opt for <strong>Sunday Evening Tiffin</strong> separately!
+    </p>
+</section>
+
+<section id="contact">
+    <h2 class="title">Contact Us</h2>
+    <div class="contact-box">
+      <p><strong>Phone:</strong> 9699884229</p>
+      <p><strong>Email:</strong> janvia490@gmail.com</p>
+      <p>Click below to chat on WhatsApp</p>
+      <a href="https://wa.me/9699884229" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Agrawal Tiffin Services. All rights reserved.
+</footer>
+
+<a href="https://wa.me/9699884229" target="_blank" class="float-wa"></a>
+
+</body>
+</html>
